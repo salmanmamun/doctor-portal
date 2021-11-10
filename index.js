@@ -52,7 +52,7 @@ async function run() {
 
         app.get('/appointments', async (req, res) => {
             const email = req.query.email;
-            const date = req.query.date;
+            const date = new Date(req.query.date).toLocalDateString();
             console.log(date);
             const query = { email: email, date: date }
 
